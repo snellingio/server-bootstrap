@@ -92,7 +92,7 @@ service nginx reload
 systemctl enable supervisor.service
 service supervisor start
 
-# Configure Swap Disk
+# Configure swap
 if [ -f /swapfile ]; then
     echo "Swap exists."
 else
