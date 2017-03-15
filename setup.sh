@@ -14,9 +14,8 @@ apt-get update
 # Install tools
 apt-get install -y \
     build-essential net-tools curl fail2ban gcc git htop   \
-    libmcrypt4 libpcre3-dev make python2.7 python-pip      \
-    sendmail supervisor ufw unattended-upgrades unzip      \
-    wget whois zsh
+    libmcrypt4 libpcre3-dev make supervisor ufw            \
+    unattended-upgrades unzip wget whois zsh
 
 # Restart ssh
 ssh-keygen -A
