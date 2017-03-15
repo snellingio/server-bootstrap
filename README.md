@@ -1,5 +1,4 @@
-- Create server
-- Login as root
-- Download `setup.sh`
+- Create server & ssh in as root
+- `wget https://github.com/snellingio/server-bootstrap/blob/master/setup.sh`
 - `chmod 700 setup.sh`
-- `bash ./setup.sh`
+- `sudo bash ./setup.sh`
