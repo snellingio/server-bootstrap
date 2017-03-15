@@ -73,7 +73,7 @@ service nginx restart
 # Install a catch-all server
 cat > /etc/nginx/sites-available/catch-all << EOF
 server {
-	return 404;
+    return 404;
 }
 EOF
 
