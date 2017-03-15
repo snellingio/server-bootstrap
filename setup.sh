@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 apt-get update
 apt-get -y upgrade
 
 # Add ppas
-apt-get install -y --force-yes software-properties-common
+apt-get install -y software-properties-common
 apt-add-repository ppa:nginx/development -y
 apt-add-repository ppa:ondrej/php -y
 apt-get update
 
 # Install tools
-apt-get install -y --force-yes \
+apt-get install -y \
     build-essential net-tools curl fail2ban gcc git htop   \
     libmcrypt4 libpcre3-dev make python2.7 python-pip      \
     sendmail supervisor ufw unattended-upgrades unzip      \
@@ -30,7 +32,7 @@ ufw allow 443
 ufw --force enable
 
 # Install base PHP packages
-apt-get install -y --force-yes \
+apt-get install -y \
     php7.1-cli php7.1-dev                           \
     php7.1-pgsql php7.1-sqlite3 php7.1-gd           \
     php7.1-curl php7.1-memcached                    \
@@ -48,7 +50,7 @@ sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/7.1/cli/php.ini
 sudo sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php/7.1/cli/php.ini
 
 # Install nginx & php-fpm
-apt-get install -y --force-yes nginx php7.1-fpm
+apt-get install -y nginx php7.1-fpm
 
 # Generate dhparam File
 openssl dhparam -out /etc/nginx/dhparams.pem 2048
